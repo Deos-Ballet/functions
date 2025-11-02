@@ -7,7 +7,7 @@
     },
     "customHandler": {
         "description": {
-            "defaultExecutablePath": "target/x86_64-unknown-linux-musl/release/functions",
+            "defaultExecutablePath": "functions",
             "workingDirectory": "",
             "arguments": []
         },
