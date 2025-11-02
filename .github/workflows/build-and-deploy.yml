@@ -20,6 +20,8 @@ jobs:
           mkdir function_package
           cp target/release/functions function_package/
           cp host.json function_package/
+          touch function_package/.funcignore
+          zip -r function_package.zip function_package
       - name: Azure Login
         uses: azure/login@v1
         with:
@@ -32,7 +34,7 @@ jobs:
           # Name of the Azure Function App
           app-name: functions
           # Path to package or folder. *.zip or a folder to deploy
-          package: function_package
+          package: function_package.zip
           # Remove unwanted files defined in .funcignore file (default: 'false'). When this is set to 'true', 'package' should point to the folder of host.json.
           respect-funcignore: true
           # For function app on Flex Consumption plan, set this to 'flexconsumption'. You can skip this parameter for function app on other plans. If using RBAC credentials, then by default, GitHub Action will resolve the value for this paramter. But if using 'publish-profile', then you must set this for function app on Flex Consumption plan.
