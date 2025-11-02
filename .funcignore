@@ -1,0 +1,18 @@
+# Azure Functions
+__azurite_db*__.json
+__blobstorage__
+__queuestorage__
+local.settings.json
+
+# Rust
+.cargo
+Cargo.lock
+Cargo.toml
+src
+target
+test
+
+# Tools
+.github
+.git*
+.vscode

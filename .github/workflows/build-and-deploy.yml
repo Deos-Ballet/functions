@@ -17,11 +17,7 @@ jobs:
         run: cargo build --release
       - name: Archive Function
         run: |
-          mkdir function_package
-          cp target/release/functions function_package/
-          cp host.json function_package/
-          cd function_package
-          zip -r ../function_package.zip .
+          cp target/release/functions .
       - name: Azure Login
         uses: azure/login@v1
         with:
