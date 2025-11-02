@@ -21,7 +21,7 @@ jobs:
           cp target/release/functions function_package/
           cp host.json function_package/
           cd function_package
-          zip ../function_package.zip .
+          zip -r ../function_package.zip .
       - name: Azure Login
         uses: azure/login@v1
         with:
